@@ -18,10 +18,11 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__."/auth.php";
+require __DIR__ . "/auth.php";
 
 
-Route::prefix('users')->name('users.')->group(function(){
+Route::get('/account', [UserController::class, 'index'])->name('account')->middleware('auth');
+Route::prefix('users')->name('users.')->group(function () {
     Route::get('/', [UserController::class, 'index'])->name('list');
     Route::get('/data', [UserController::class, 'getUsersData'])->name('data');
-});
+})->middleware('auth');

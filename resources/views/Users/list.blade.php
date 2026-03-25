@@ -5,7 +5,7 @@
     <div class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="container">
+                <div class="container" style="min-height: 100vh;">
                     <h2>User List</h2>
                     <table id="users-table" class="display" style="width:100%">
                         <thead>
